@@ -1,0 +1,16 @@
+{
+  "apps": [
+    {
+      "name": "moonbase-backend-dev",
+      "script": "./build/index.js",
+      "watch": true,
+      "merge_logs": true,
+      "cwd": "/home/dev/backend",
+      "env": {
+        "NODE_ENV": "dev",
+        "MONGODB_DB_URL": "mongodb://localhost:27017/achs-pensiones-dev",
+        "PORT": "8000"
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "databaseConfig": {
+    "connectionUrl": "mongodb://localhost:27017/efx-safe-api-dev"
+  },
+  "envi": "dev",
+  "middleware": {
+    "devtools": {
+      "enabled": true,
+      "priority": 35,
+      "module": {
+        "name": "construx",
+        "arguments": [
+          "path:./public",
+          "path:./.build",
+          {
+            "copier": {
+              "module": "construx-copier",
+              "files": "**/*"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

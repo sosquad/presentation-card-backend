@@ -1,0 +1,104 @@
+{
+  "specialization": {},
+  "envi": "production",
+  "databaseConfig": {
+    "connectionUrl": "env:MONGODB_DB_URL"
+  },
+  "logger": {
+    "db": "config:databaseConfig.connectionUrl",
+    "collection": "logs",
+    "decolorize": false,
+    "useUnifiedTopology": true
+  },
+  "middleware": {
+    "static": {
+      "module": {
+        "arguments": ["path:./.build"]
+      }
+    },
+    "router": {
+      "module": {
+        "arguments": [{ "directory": "path:./app/controllers" }]
+      }
+    },
+
+    "cors": {
+        "enabled": true,
+        "priority": 5,
+        "module": {
+        "name": "cors",
+        "arguments": [
+          {
+            "origin": "*",
+            "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
+            "preflightContinue": false,
+            "optionsSuccessStatus": 204
+          }
+        ]
+      }
+    },
+
+    "compress": {
+      "enabled": true,
+      "priority": 10,
+      "module": "compression"
+    },
+
+    "json": {
+      "enabled": true,
+      "priority": 60,
+      "module": {
+        "name": "body-parser",
+        "method": "json",
+        "arguments": [
+          {
+            "limit": "15mb"
+          }
+        ]
+      }
+    },
+
+    "appsec": {
+      "enabled": true,
+      "priority": 110,
+      "module": {
+        "name": "lusca",
+        "arguments": [
+          {
+            "csrf": false,
+            "p3p": false,
+            "xframe": "SAME-ORIGIN",
+            "csp": false
+          }
+        ]
+      }
+    },
+
+    "multipart": {
+      "enabled": true,
+      "priority": 80,
+      "module": {
+        "name": "kraken-js/middleware/multipart",
+        "arguments": [
+          {
+            "maxFieldsSize": 20960000,
+            "uploadDir": "./",
+            "multiples": true,
+            "keepExtensions": true
+          }
+        ]
+      }
+    },
+
+    "healthCheck": {
+        "enabled": true,
+        "priority": 5,
+        "route": "/hc",
+        "module": {
+            "name": "@23people/moonbase-express/middlewares/health-check",
+            "method": "healthCheck"
+        }
+
+    }
+  }
+}

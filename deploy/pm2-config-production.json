@@ -1,0 +1,16 @@
+{
+  "apps": [
+    {
+      "name": "moonbase-backend",
+      "script": "./build/index.js",
+      "watch": true,
+      "merge_logs": true,
+      "cwd": "/home/user/prod/backend",
+      "env": {
+        "NODE_ENV": "production",
+        "MONGODB_DB_URL": "mongodb://localhost:27017/wayra-cvl",
+        "PORT": "8000"
+      }
+    }
+  ]
+}
