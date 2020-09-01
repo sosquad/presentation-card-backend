@@ -1,14 +1,14 @@
 {
   "apps": [
     {
-      "name": "moonbase-backend-qa",
+      "name": "presentation-card-backend-qa",
       "script": "./build/index.js",
       "watch": true,
       "merge_logs": true,
       "cwd": "/home/user/qa/backend",
       "env": {
         "NODE_ENV": "qa",
-        "MONGODB_DB_URL": "mongodb://localhost:27017/qa-wayra-cvl",
+        "MONGODB_DB_URL": "mongodb://localhost:27017/qa-presentation-card",
         "PORT": "8001"
       }
     }

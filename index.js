@@ -1,13 +1,15 @@
 const http = require('http');
 const express = require('express');
 const kraken = require('kraken-js');
-const logger = require('@23people/moonbase-mongo-logger');
-
-const options = require('./init');
+const cors = require('cors');
+const logger = require('./lib/logger');
+const options = require('./lib/start-options.js');
 
 const defaultPort = 8000;
 
 const app = express();
+
+app.use(cors());
 
 app.use(kraken(options));
 app.on('start', () => {

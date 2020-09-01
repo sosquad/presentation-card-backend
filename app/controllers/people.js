@@ -1,4 +1,4 @@
-const crudController = require('@23people/moonbase-express/crud-controller');
+const crudController = require('../../lib/rest-controller');
 const service = require('../services/people-service');
 
 module.exports = router => {
@@ -19,10 +19,6 @@ module.exports = router => {
   router.put('/:id', (req, res) => crudController.update(req, res, service));
 
   router.delete('/:id', (req, res) => crudController.delete(req, res, service));
-
-  router.post('/verify', crudController.validate(service), (req, res) => {
-    return res.json({ todo: 'ok' });
-  });
 
   router.post('/upload-file', (req, res) => {
     // file is automatically removed once finished

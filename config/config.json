@@ -88,17 +88,6 @@
           }
         ]
       }
-    },
-
-    "healthCheck": {
-        "enabled": true,
-        "priority": 5,
-        "route": "/hc",
-        "module": {
-            "name": "@23people/moonbase-express/middlewares/health-check",
-            "method": "healthCheck"
-        }
-
     }
   }
 }

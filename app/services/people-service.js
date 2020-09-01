@@ -1,4 +1,4 @@
-const basicCrudService = require('@23people/moonbase-mongoose-utils/basic-crud-service');
+const basicCrudService = require('../../lib/basic-crud-service');
 const Model = require('../models/person');
 
 const defaults = {

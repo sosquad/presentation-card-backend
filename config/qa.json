@@ -1,6 +1,6 @@
 {
   "databaseConfig": {
-    "connectionUrl": "mongodb://localhost:27017/moonbase-qa"
+    "connectionUrl": "mongodb://localhost:27017/presentation-card-qa"
   },
   "envi": "qa"
 }

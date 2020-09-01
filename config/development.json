@@ -1,6 +1,6 @@
 {
   "databaseConfig": {
-    "connectionUrl": "mongodb://localhost:27017/efx-safe-api-dev"
+    "connectionUrl": "mongodb://localhost:27017/presentation-card-dev"
   },
   "envi": "dev",
   "middleware": {
